@@ -43,3 +43,99 @@ public class TesteFund {
     }
 
 }
+exercicios sexta 
+
+package Fundamentos;
+
+import java.util.Scanner;
+
+public class Shopping {
+    public static void main (String [] args){
+        Scanner entrada = new Scanner(System.in);
+
+        System.out.println("Está Sol neste momento ?");
+        String sol = entrada.next();
+
+        System.out.println("Es?");
+
+        entrada.close();
+        System.out.println(sol);
+
+    }
+}
+ exercicios sexta 
+ package Fundamentos;
+import java.util.Locale;
+import java.util.Scanner;
+public class scan {
+
+        public static void main(String[] args) {
+
+            Scanner scanner = new Scanner(System.in);
+
+            System.out.println("Digite o valor do seu salario desse mes  : ");
+            String salario1 = scanner.next().replace(",",".");
+
+            System.out.print("Digite o valor do seu salario no ultimo mes : ");
+            String salario2 = scanner.next().replace(",",".");
+
+            System.out.print("Digite o valor do seu salario de dois meses atras : ");
+            String salario3 = scanner.next().replace(",",".");
+
+
+            double valor1 = Double.parseDouble(salario1);
+            double valor2 = Double.parseDouble(salario2);
+            double valor3 = Double.parseDouble(salario3);
+
+
+            double media = (valor1+valor2+valor3) / 3;
+
+            System.out.println("Media salarial :"+media);
+
+
+            scanner.close();
+            System.out.println(Locale.getDefault());
+
+
+        }
+
+}
+exercicios sexta 
+package Fundamentos;
+
+import java.util.Scanner;
+
+public class wrapper {
+    public static void main( String [] args){
+        Byte b = 100;
+        Long l = 100000L;
+        Short s = 1000;
+
+        Scanner entrada = new Scanner(System.in);
+
+        System.out.println("Digite o numero do departamento do BRB : ");
+        int departamento = entrada.nextInt();
+
+
+        System.out.println(b.byteValue());
+        System.out.println(l.longValue());
+        System.out.println(s.toString());
+
+
+        System.out.println("Departamendo Digitado : "+departamento);
+
+        entrada.close();
+        Boolean bo = Boolean.parseBoolean("false");
+        System.out.println(bo);
+        if (bo==true){
+            System.out.println("O boolean esta correto!");
+        }else {
+            System.out.println("o boolean esta errado");
+        }
+
+    }
+}
+
+exercicios sexta 
+
+
