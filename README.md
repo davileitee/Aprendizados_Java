@@ -139,3 +139,151 @@ public class wrapper {
 exercicios sexta 
 
 
+Desafio Modulo : 
+data.java: 
+package ClasseMetodos;
+
+public class Data {
+    int dia;
+    String mes;
+    int ano;
+
+     Data (){
+        //dia = 1;
+       // mes = "Janeiro";
+        //ano = 1970;
+         this(1,"janeiro",1970);
+    }
+
+    Data (Integer dia, String mes, Integer anoInicial){
+        this.dia = dia;
+        this.mes = mes;
+        ano = anoInicial;
+    }
+     final String formatoData = "Hoje é %d de %s de %d ";
+
+       String obterDataformata (){
+         return String.format(formatoData,dia,mes,ano);
+    }
+    void imprimirData(){
+        System.out.println(obterDataformata());
+    }
+}
+dataTeste.java :
+package ClasseMetodos;
+
+import java.util.Scanner;
+
+public class DataTeste {
+    public static void main(String[] args) {
+        Scanner entrada = new Scanner(System.in);
+
+        System.out.printf("Digite um mes:");
+        String mes = entrada.nextLine();
+        System.out.printf("Digite um ano:");
+        int ano = Integer.parseInt(entrada.nextLine());
+        System.out.printf("Digite um dia:");
+        int dia = Integer.parseInt(entrada.nextLine());
+
+        Data d1 = new Data(dia,mes,ano);
+
+        var d2 = new Data();
+
+
+        System.out.println(d1.obterDataformata());
+        System.out.println(d2.obterDataformata());
+    }
+}
+
+
+produto.java:
+package ClasseMetodos;
+
+public class Produto  {
+    String nome;
+    double valor;
+    static double desconto = 0.30;
+
+    Produto(){
+    }
+    Produto(String nomeInicial, Double precoInicial){
+        nome = nomeInicial;
+        valor = precoInicial;
+       // desconto = descontoInicial;
+    }
+    double precoComdesconto (){
+        return valor * (1-desconto);
+    }
+    double precoComdesconto (double descontoDogerente){
+        return valor * (1-desconto+descontoDogerente);
+    }
+}
+
+produtoTeste.java:
+package ClasseMetodos;
+
+import java.util.Scanner;
+
+public class ProdutoTeste {
+    public static void main(String[] args) {
+
+        Produto p1 = new Produto("Mesa",300.99);
+
+        var p2 = new Produto();
+        p2.nome = "cadeira";
+        p2.valor = 250.99;
+        //p2.desconto = 0.50;
+
+
+
+        System.out.printf("Os produtos comprados foram %s e %s.\n",p1.nome,p2.nome);
+
+
+        double ProdutoFinal1 = p1.precoComdesconto();
+        double ProdutoFinal2 = p2.precoComdesconto();
+        double MediaCarinho = (ProdutoFinal1+ProdutoFinal2)/2;
+        double SomaProdutos = ProdutoFinal1+ProdutoFinal2;
+
+
+        System.out.println(ProdutoFinal2);
+
+        System.out.printf("Media do seu carrinho é R$:%.2f\n",MediaCarinho);
+        System.out.printf("O valor total do seu carrinho (Com descontos aplicados) :%.2f\n",SomaProdutos);
+        System.out.printf("O valor do Produto 1 é : %.2f ",ProdutoFinal1);
+
+
+    }
+}
+
+ValorXReferencia.java:
+package ClasseMetodos;
+
+public class ValorXReferencia {
+    public static void main(String[] args) {
+        double a = 2;
+        double b = a; // Atribuição por valor
+        a++;
+        b--;
+
+        System.out.println(a + "  " + b);
+
+        Data d1 = new Data(26,"janeiro",2006);//Atribuição por referencia ( objeto )
+        Data d2 = d1;
+
+        System.out.println(d2.obterDataformata());
+
+        VoltarValorPadraoData(d1);
+
+        System.out.println(d1.obterDataformata());
+        System.out.println(d2.obterDataformata());
+    }
+    static void VoltarValorPadraoData(Data d){
+        d.mes = "agosto";
+        d.dia = 1;
+        d.ano = 2025;
+    }
+}
+
+
+
+
